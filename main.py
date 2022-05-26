@@ -48,73 +48,73 @@ df_final = pd.read_csv('final_values.csv')
 fig_bpm = px.line(df_final['bpm'])
 fig_spo2 = px.line(df_final['spo2'])
 
-app.layout = html.Div(children=[
-    # All elements from the top of the page
-    html.Div([
-        html.Div([
-            html.H1(children='Sensor infrarrojo'),
+# app.layout = html.Div(children=[
+#     # All elements from the top of the page
+#     html.Div([
+#         html.Div([
+#             html.H1(children='Sensor infrarrojo'),
 
-            html.Div(children='''
-                Información obtenida del sensor
-            '''),
+#             html.Div(children='''
+#                 Información obtenida del sensor
+#             '''),
 
-            dcc.Graph(
-                id='graph-i',
-                figure=fig_raw_i
-            ),  
-        ], className='six columns'),
-        html.Div([
-            html.H1(children='Sensor emisor'),
+#             dcc.Graph(
+#                 id='graph-i',
+#                 figure=fig_raw_i
+#             ),  
+#         ], className='six columns'),
+#         html.Div([
+#             html.H1(children='Sensor emisor'),
 
-            html.Div(children='''
-                Información obtenida del sensor
-            '''),
-            dcc.Graph(
-                id='graph-r',
-                figure=fig_raw_r
-            ),  
-        ], className='six columns'),
-    ], className='row'),
-    # New Div for all elements in the new 'row' of the page
-    html.Div([
-        html.H1(children='Gráfica de sensores'),
+#             html.Div(children='''
+#                 Información obtenida del sensor
+#             '''),
+#             dcc.Graph(
+#                 id='graph-r',
+#                 figure=fig_raw_r
+#             ),  
+#         ], className='six columns'),
+#     ], className='row'),
+#     # New Div for all elements in the new 'row' of the page
+#     html.Div([
+#         html.H1(children='Gráfica de sensores'),
 
-        html.Div(children='''
-            Comparación de valores ir - red
-        '''),
+#         html.Div(children='''
+#             Comparación de valores ir - red
+#         '''),
 
-        dcc.Graph(
-            id='graph-raw',
-            figure=fig_raw
-        ),  
-    ], className='row'),
-     html.Div([
-        html.Div([
-            html.H1(children='BPM'),
+#         dcc.Graph(
+#             id='graph-raw',
+#             figure=fig_raw
+#         ),  
+#     ], className='row'),
+#      html.Div([
+#         html.Div([
+#             html.H1(children='BPM'),
 
-            html.Div(children='''
-                :)
-            '''),
+#             html.Div(children='''
+#                 :)
+#             '''),
 
-            dcc.Graph(
-                id='graph-bpm',
-                figure=fig_bpm
-            ),  
-        ], className='six columns'),
-        html.Div([
-            html.H1(children='Porcentaje de oxigenación'),
+#             dcc.Graph(
+#                 id='graph-bpm',
+#                 figure=fig_bpm
+#             ),  
+#         ], className='six columns'),
+#         html.Div([
+#             html.H1(children='Porcentaje de oxigenación'),
 
-            html.Div(children='''
-                SPO2
-            '''),
+#             html.Div(children='''
+#                 SPO2
+#             '''),
 
-            dcc.Graph(
-                id='graph-spo2',
-                figure=fig_spo2
-            ),  
-        ], className='six columns'),
-    ], className='row')
-])
+#             dcc.Graph(
+#                 id='graph-spo2',
+#                 figure=fig_spo2
+#             ),  
+#         ], className='six columns'),
+#     ], className='row')
+# ])
 
-if __name__ == '__main__':
-    app.run_server(debug=True)
+# if __name__ == '__main__':
+#     app.run_server(debug=True)
