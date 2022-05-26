@@ -46,8 +46,13 @@ class HeartRateMonitor(object):
                     num_bytes -= 1
                     ir_data.append(ir)
                     red_data.append(red)
+                    raw = {"ir_data": ir, "red_data": red}
+                    raw_vals.append(raw)  
                     if self.print_raw:
                         print("{0}, {1}".format(ir, red))
+#                         raw = {"ir_data": ir, "red_data": red}
+#                         raw_vals.append(raw)               
+
 
                 while len(ir_data) > 100:
                     ir_data.pop(0)
@@ -55,8 +60,8 @@ class HeartRateMonitor(object):
 
                 if len(ir_data) == 100:
                     bpm, valid_bpm, spo2, valid_spo2 = hrcalc.calc_hr_and_spo2(ir_data, red_data)
-                    raw = {"ir_data": np.mean(ir_data), "red_data": np.mean(red_data)}
-                    raw_vals.append(raw)               
+#                     raw = {"ir_data": np.mean(ir_data), "red_data": np.mean(red_data)}
+#                     raw_vals.append(raw)               
                     
                     if valid_bpm:
                         bpms.append(bpm)
