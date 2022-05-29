@@ -15,12 +15,19 @@ app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 # see https://plotly.com/python/px-arguments/ for more options
 df_raw = pd.read_csv('raw_values.csv')
 fig_raw_i = px.line(df_raw['ir_data'])
+fig_raw_i.update_layout(xaxis_title="Número de muestra",yaxis_title="Valor digital de lectura") 
+
 fig_raw_r = px.line(df_raw['red_data'])
 fig_raw = px.line(df_raw)
+fig_raw.update_layout(xaxis_title="Número de muestra",yaxis_title="Valor digital de lectura") 
+fig_raw_r.update_layout(xaxis_title="Número de muestra",yaxis_title="Valor digital de lectura") 
 
 df_final = pd.read_csv('final_values.csv')
 fig_bpm = px.line(df_final['bpm'])
+fig_bpm.update_layout(xaxis_title="Número de muestra",yaxis_title="Pulso cardíaco") 
+
 fig_spo2 = px.line(df_final['spo2'])
+fig_spo2.update_layout(xaxis_title="Número de muestra",yaxis_title="%") 
 
 app.layout = html.Div(children=[
     # All elements from the top of the page
